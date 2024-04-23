@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.mainPage.mainPageController">
+   <children>
+      <VBox prefWidth="600.0">
+         <children>
+            <AnchorPane prefWidth="600.0" stylesheets="@mainPageStyle.css" styleClass="background-pane">
+               <children>
+                  <Label layoutX="108.0" text="非对称密码加密与量子破译">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="350.0" prefWidth="600.0">
+               <children>
+                  <HBox prefHeight="352.0" prefWidth="600.0">
+                     <children>
+                        <AnchorPane prefWidth="300.0">
+                           <children>
+                              <VBox prefWidth="300.0">
+                                 <children>
+                                    <AnchorPane prefHeight="50.0" prefWidth="300.0">
+                                       <children>
+                                          <Button fx:id="RSAButton" layoutX="75.0" layoutY="5.0"
+                                                  mnemonicParsing="false" prefWidth="150.0" text="RSA加密" onAction="#doRSAButton">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="50.0" prefWidth="300.0">
+                                       <children>
+                                          <Button fx:id="RabinButton" layoutX="75.0" layoutY="5.0"
+                                                  mnemonicParsing="false" prefWidth="150.0" text="Rabin加密"
+                                                  onAction="#doRabinButton">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="50.0" prefWidth="300.0">
+                                       <children>
+                                          <Button fx:id="ElGamalButton" layoutX="75.0" layoutY="5.0"
+                                                  mnemonicParsing="false" prefWidth="150.0" text="ElGamal加密" onAction="#doElGamalButton">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="50.0" prefWidth="300.0">
+                                       <children>
+                                          <Button fx:id="DSAButton" layoutX="75.0" layoutY="5.0"
+                                                  mnemonicParsing="false" prefWidth="150.0" text="DSA加密" onAction="#doDSAButton">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="50.0" prefWidth="300.0">
+                                       <children>
+                                          <Button fx:id="ECCButton" layoutX="75.0" layoutY="5.0"
+                                                  mnemonicParsing="false" prefWidth="150.0" text="ECC加密" onAction="#doECCButton">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="50.0" prefWidth="300.0">
+                                       <children>
+                                          <Button fx:id="ECDSAButton" layoutX="75.0" layoutY="5.0"
+                                                  mnemonicParsing="false" prefWidth="150.0" text="ECDSA加密" onAction="#doECDSAButton">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefWidth="300.0">
+                           <children>
+                              <VBox prefWidth="300.0">
+                                 <children>
+                                    <AnchorPane prefHeight="100.0" prefWidth="300.0">
+                                       <children>
+                                          <Button fx:id="AttackRSA" layoutX="75.0" layoutY="30.0"
+                                                  mnemonicParsing="false" prefWidth="150.0" text="大整数分解" onAction="#doRSAAttack">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="100.0" prefWidth="300.0">
+                                       <children>
+                                          <Button fx:id="AttackElGamal" layoutX="75.0" layoutY="30.0"
+                                                  mnemonicParsing="false" prefWidth="150.0" text="离散对数" onAction="#doElgamalAttack">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane prefHeight="100.0" prefWidth="300.0">
+                                       <children>
+                                          <Button fx:id="AttackECC" layoutX="75.0" layoutY="30.0"
+                                                  mnemonicParsing="false" prefWidth="150.0" text="椭圆离散对数" onAction="#doECCAttack">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
