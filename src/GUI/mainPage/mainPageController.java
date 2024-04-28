@@ -20,13 +20,7 @@ public class mainPageController {
     @FXML
     private Button RSAButton;
     @FXML
-    private Button RabinButton;
-    @FXML
-    private Button ElGamalButton;
-    @FXML
     private Button DSAButton;
-    @FXML
-    private Button ECCButton;
     @FXML
     private Button ECDSAButton;
 
@@ -62,20 +56,8 @@ public class mainPageController {
         openEncryptionPage(EncryptionPage.RSA);
     }
     @FXML
-    private void doRabinButton(){
-        openEncryptionPage(EncryptionPage.Rabin);
-    }
-    @FXML
-    private void doElGamalButton(){
-        openEncryptionPage(EncryptionPage.ElGamal);
-    }
-    @FXML
     private void doDSAButton(){
         openEncryptionPage(EncryptionPage.DSA);
-    }
-    @FXML
-    private void doECCButton(){
-        openEncryptionPage(EncryptionPage.ECC);
     }
     @FXML
     private void doECDSAButton(){
