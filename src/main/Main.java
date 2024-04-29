@@ -17,7 +17,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         primaryStage = stage;
-        primaryStage.setOnHiding(e->{exit(0);});
+        primaryStage.setOnHiding(e-> exit(0));
         primaryStage.setResizable(false);
         changeViews(primaryStage,"/GUI/mainPage/mainPage.fxml");
         primaryStage.show();
