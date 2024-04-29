@@ -12,9 +12,9 @@
    <children>
       <SplitPane dividerPositions="0.29797979797979796" prefHeight="400.0" prefWidth="600.0">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0">
                <children>
-                  <VBox prefWidth="150.0">
+                  <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <AnchorPane prefHeight="60.0" prefWidth="150.0">
                            <children>
@@ -23,16 +23,16 @@
                               <ChoiceBox fx:id="keyChoiceBox" layoutY="29.0" prefWidth="150.0" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane maxHeight="150.0" maxWidth="150.0" minHeight="150.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0">
+                        <AnchorPane maxHeight="150.0" minHeight="150.0" prefHeight="150.0">
                            <children>
                               <Label layoutX="14.0" layoutY="7.0" text="公钥" />
-                              <TextArea fx:id="publicKeyArea" editable="false" layoutX="14.0" layoutY="22.0" maxHeight="120.0" maxWidth="150.0" />
+                              <TextArea fx:id="publicKeyArea" editable="false" layoutX="14.0" layoutY="22.0" maxHeight="120.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane maxHeight="150.0" maxWidth="150.0" minHeight="150.0" minWidth="150.0" prefHeight="150.0" prefWidth="150.0">
+                        <AnchorPane maxHeight="150.0" minHeight="150.0" prefHeight="150.0">
                            <children>
                               <Label layoutX="14.0" layoutY="7.0" text="私钥" />
-                              <TextArea fx:id="privateKeyArea" editable="false" layoutX="14.0" layoutY="22.0" maxHeight="120.0" maxWidth="150.0" />
+                              <TextArea fx:id="privateKeyArea" editable="false" layoutX="14.0" layoutY="22.0" maxHeight="120.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefWidth="150.0">

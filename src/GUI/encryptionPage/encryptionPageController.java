@@ -8,7 +8,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import project.encryption.DSA.ElGamalService;
+import project.encryption.ElGamal.ElGamalService;
 import project.encryption.EncryptionService;
 import project.encryption.RSA.RSAService;
 
@@ -107,7 +107,7 @@ public class encryptionPageController {
                 FileChooser fileChooser = new FileChooser();
                 fileChooser.setTitle("打开文件");
 
-                fileChooser.setInitialDirectory(new File(System.getProperty("user.home") + "/Desktop"));
+                fileChooser.setInitialDirectory(new File("Resources/"));
                 FileChooser.ExtensionFilter extFilter = new FileChooser.ExtensionFilter("Text files (*.txt)", "*.txt");
                 fileChooser.getExtensionFilters().add(extFilter);
 

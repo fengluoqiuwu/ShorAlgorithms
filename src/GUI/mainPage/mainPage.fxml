@@ -39,7 +39,7 @@
                                     </AnchorPane>
                                     <AnchorPane prefHeight="100.0" prefWidth="300.0">
                                        <children>
-                                          <Button fx:id="DSAButton" layoutX="75.0" layoutY="30.0" mnemonicParsing="false" onAction="#doDSAButton" prefWidth="150.0" text="DSA加密">
+                                          <Button fx:id="DSAButton" layoutX="75.0" layoutY="30.0" mnemonicParsing="false" onAction="#doDSAButton" prefWidth="150.0" text="ElGamal加密">
                                              <font>
                                                 <Font size="20.0" />
                                              </font>
@@ -48,7 +48,7 @@
                                     </AnchorPane>
                                     <AnchorPane prefHeight="100.0" prefWidth="300.0">
                                        <children>
-                                          <Button fx:id="ECDSAButton" layoutX="75.0" layoutY="30.0" mnemonicParsing="false" onAction="#doECDSAButton" prefWidth="150.0" text="ECDSA加密">
+                                          <Button fx:id="ECDSAButton" layoutX="75.0" layoutY="30.0" mnemonicParsing="false" onAction="#doECDSAButton" prefWidth="150.0" text="ECC加密">
                                              <font>
                                                 <Font size="20.0" />
                                              </font>
