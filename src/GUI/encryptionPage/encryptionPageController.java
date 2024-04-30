@@ -8,6 +8,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import project.encryption.ECC.ECCService;
 import project.encryption.ElGamal.ElGamalService;
 import project.encryption.EncryptionService;
 import project.encryption.RSA.RSAService;
@@ -71,10 +72,10 @@ public class encryptionPageController {
                     service=new ElGamalService();
                     break;
                 case ECDSA:
-                    service=null;
+                    service=new ECCService();
             }
             generateKey();
-        }catch (NoSuchAlgorithmException e){
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
@@ -84,12 +85,12 @@ public class encryptionPageController {
         switch (encryptionPage){
             case RSA-> keyChoiceBox.getItems().addAll(1024,2048,3072,4096);
             case DSA-> keyChoiceBox.getItems().addAll(1024,2048);
-            case ECDSA-> keyChoiceBox.getItems().addAll(2);
+            case ECDSA-> keyChoiceBox.getItems().addAll(192,224,256,384,521);
         }
         keyChoiceBox.getSelectionModel().selectFirst();
     }
     @FXML
-    private void generateKey() throws NoSuchAlgorithmException {
+    private void generateKey() throws Exception {
         service.setKeySize(keyChoiceBox.getValue());
 
         service.generateKeyPair();

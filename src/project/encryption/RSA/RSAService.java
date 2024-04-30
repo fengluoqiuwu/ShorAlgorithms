@@ -21,7 +21,7 @@ public class RSAService implements EncryptionService {
         this.keySize = keySize;
     }
     @Override
-    public void generateKeyPair() throws NoSuchAlgorithmException {
+    public void generateKeyPair() throws Exception {
         KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
         keyPairGenerator.initialize(keySize);
         keyPair = keyPairGenerator.generateKeyPair();

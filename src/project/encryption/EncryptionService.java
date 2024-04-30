@@ -6,7 +6,7 @@ import java.security.PublicKey;
 
 public interface EncryptionService {
     public void setKeySize(int keySize);
-    public void generateKeyPair() throws NoSuchAlgorithmException;
+    public void generateKeyPair() throws Exception;
     public String getPublicKey();
     public String getPrivateKey();
     public String encrypt(String plainText) throws Exception;
