@@ -259,9 +259,9 @@ def const_QFT_modularPower_circuit(N1,N2,c,m):
     circuit = QuantumCircuit(N1+2*N2+1)
 
     for i in range(N1):
-        circuit.append(const_QFT_controlModularMultiplication_circuit(N2,(c**i)%m,m),[N1-1-i]+[N1+j for j in range(2*N2+1)])
+        circuit.append(const_QFT_controlModularMultiplication_circuit(N2,(c**(2**i))%m,m),[N1-1-i]+[N1+j for j in range(2*N2+1)])
 
     circuit.name = 'const_QFT_modularPower'
-    const_QFT_modularPower = circuit.to_gate().control(1)
+    const_QFT_modularPower = circuit.to_gate()
 
     return const_QFT_modularPower
