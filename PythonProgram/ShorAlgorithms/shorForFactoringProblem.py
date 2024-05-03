@@ -104,4 +104,4 @@ def factoring(n : int):
             return math.gcd(a ** (r // 2) - 1, n), math.gcd(a ** (r // 2) + 1, n)
 
 if __name__ == "__main__":
-    print(factoring(15))
+    print(factoring(35))
