@@ -77,11 +77,8 @@ def const_QFT_controlAddition_circuit(N,c):
     :param c: 要向量子电路中加上的常数
     :return: N位的基于QFT实现的控制常数加法器
     """
-    circuit = QuantumCircuit(N)
-    circuit.append(const_QFT_addition_circuit(N,c),range(N))
-    circuit.name = 'const_QFT_addition+='+str(c)
-    const_QFT_addition = circuit.to_gate().control(1)
-    return const_QFT_addition
+
+    return const_QFT_addition_circuit(N,c).control(1)
 def const_QFT_controlSubtraction_circuit(N,c):
     """
     N位的基于QFT实现的控制常数减法器，0位为高位
@@ -89,11 +86,8 @@ def const_QFT_controlSubtraction_circuit(N,c):
     :param c: 要向量子电路中减去的常数
     :return: N位的基于QFT实现的控制常数减法器
     """
-    circuit = QuantumCircuit(N)
-    circuit.append(const_QFT_subtraction_circuit(N,c),range(N))
-    circuit.name = 'const_QFT_subtraction-='+str(c)
-    const_QFT_subtraction = circuit.to_gate().control(1)
-    return const_QFT_subtraction
+
+    return const_QFT_subtraction_circuit(N, c).control(1)
 def const_QFT_modularAddition_circuit(N,c,m):
     """
     N位的基于QFT实现的常数模加器，0位为高位
@@ -147,11 +141,8 @@ def const_QFT_controlModularAddition_circuit(N,c,m):
     :param m: 模运算的模数m
     :return: N位的基于QFT实现的控制常数模加器
     """
-    circuit = QuantumCircuit(N+1)
-    circuit.append(const_QFT_modularAddition_circuit(N, c, m), range(N + 1))
-    circuit.name = 'const_QFT_modularAddition+' + str(c) + ' mod ' + str(m)
-    const_QFT_modularAddition = circuit.to_gate().control(1)
-    return const_QFT_modularAddition
+
+    return const_QFT_modularAddition_circuit(N,c,m).control(1)
 def const_QFT_controlModularSubtraction_circuit(N,c,m):
     """
     N位的基于QFT实现的控制常数模减器，0位为高位
@@ -161,11 +152,8 @@ def const_QFT_controlModularSubtraction_circuit(N,c,m):
     :param m: 模运算的模数m
     :return: N位的基于QFT实现的控制常数模减器
     """
-    circuit = QuantumCircuit(N + 1)
-    circuit.append(const_QFT_modularSubtraction_circuit(N, c, m), range(N + 1))
-    circuit.name = 'const_QFT_modularSubtraction-' + str(c) + ' mod ' + str(m)
-    const_QFT_modularSubtraction = circuit.to_gate().control(1)
-    return const_QFT_modularSubtraction
+
+    return const_QFT_modularSubtraction_circuit(N, c, m).control(1)
 def const_QFT_modularAddMultiplication_circuit(N,c,m):
     """
     N位的基于QFT实现的常数模倍加器，0位为高位
@@ -237,14 +225,8 @@ def const_QFT_controlModularMultiplication_circuit(N,c,m):
     :param m:模运算的模数m
     :return:N位的基于QFT实现的控制常数模乘器
     """
-    circuit = QuantumCircuit(2*N+1)
 
-    circuit.append(const_QFT_modularMultiplication_circuit(N,c,m),range(2*N+1))
-
-    circuit.name = 'const_QFT_modularMultiplication'
-    const_QFT_modularMultiplication = circuit.to_gate().control(1)
-
-    return const_QFT_modularMultiplication
+    return const_QFT_modularMultiplication_circuit(N,c,m).control(1)
 def const_QFT_modularPower_circuit(N1,N2,c,m):
     """
     N1,N2位的基于QFT实现的常数模幂器，0位为高位

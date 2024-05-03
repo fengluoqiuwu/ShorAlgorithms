@@ -34,13 +34,8 @@ def controlR_Gate(N):
     e^((2i*pi)/(2^N))的控制旋转门
     :return: 控制旋转R门
     """
-    circuit = QuantumCircuit(1)
-    circuit.p(2*pi/float(2**N),0)
 
-    circuit.name='R_'+str(N)
-    controlR_Gate = circuit.to_gate().control(1)
-
-    return controlR_Gate
+    return R_Gate(N).control(1)
 def R_daggerGate(N):
     """
     e^(-(2i*pi)/(2^N))的旋转门
@@ -58,13 +53,8 @@ def controlR_daggerGate(N):
     e^(-(2i*pi)/(2^N))的控制旋转门
     :return: 控制旋转R门的逆门
     """
-    circuit = QuantumCircuit(1)
-    circuit.append(R_daggerGate(N), [0])
 
-    circuit.name = 'R_' + str(N) + '†'
-    controlR_Gate = circuit.to_gate().control(1)
-
-    return controlR_Gate
+    return R_daggerGate(N).control(1)
 def QFT(N):
     """
     N位量子傅里叶变换QFT的门
