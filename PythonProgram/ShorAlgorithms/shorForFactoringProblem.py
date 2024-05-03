@@ -91,7 +91,7 @@ class ShorForFactoringProblem:
                     return r
 def factoring(n : int):
     while True:
-        a = random.randint(2, n-1)
+        a = random.randint(2, n-2)
 
         if math.gcd(a, n)!=1:
             continue
