@@ -76,11 +76,9 @@ class ShorForFactoringProblem:
         attempt=0
         while True:
             attempt += 1
-            print("\nAttempt %i:" % attempt)
             phase = self.run()# Phase = s/r
             frac = Fraction(phase).limit_denominator(self.n)  # Denominator should (hopefully!) tell us r
             r : int = frac.denominator
-            print("Result: r = %i" % r)
 
             if phase != 0 and pow(self.a,r,self.n)==1:
                 while r%2==0 and pow(self.a,r//2,self.n)==1:
@@ -96,12 +94,13 @@ def factoring(n : int):
         if math.gcd(a, n)!=1:
             continue
 
-        print("a:"+str(a)+" ")
         shor = ShorForFactoringProblem(n,a)
         r = shor.find_r()
-        print("r:"+str(r)+'\n')
         if r!=-1:
             return math.gcd(a ** (r // 2) - 1, n), math.gcd(a ** (r // 2) + 1, n)
 
 if __name__ == "__main__":
-    print(factoring(35))
+    input_n = int(input("请输入待分解的整数："))
+    p , q = factoring(input_n)
+    print(str(p))
+    print(str(q))

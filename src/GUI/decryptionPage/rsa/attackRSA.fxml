@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.decryptionPage.rsa.attackRSAController">
+   <children>
+      <VBox prefWidth="600.0">
+         <children>
+            <AnchorPane prefWidth="600.0">
+               <children>
+                  <Label layoutX="237.0" layoutY="7.0" text="RSA破译">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="300.0" prefWidth="600.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <TextField fx:id="input" layoutX="40.0" layoutY="32.0" prefHeight="23.0" prefWidth="354.0" promptText="请输入公钥n" />
+                  <TextArea fx:id="output" editable="false" layoutX="40.0" layoutY="74.0" prefHeight="200.0" prefWidth="354.0" />
+                  <Button fx:id="doAttack" layoutX="439.0" layoutY="24.0" mnemonicParsing="false" text="doAttack"
+                          onAction="#doAttack">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="tips" layoutX="439.0" layoutY="83.0" prefHeight="15.0" prefWidth="114.0" textFill="RED" wrapText="true" />
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
