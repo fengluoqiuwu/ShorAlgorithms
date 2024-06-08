@@ -22,6 +22,8 @@ public class attackRSAController {
     @FXML
     private Label tips;
 
+    private Integer n=null;
+
     private Thread pythonProgram= new Thread(() -> {
         int p=0,q=0;
         Platform.runLater(()->{
@@ -29,7 +31,7 @@ public class attackRSAController {
         });
 
         try {
-            String pythonScript = "//";
+            String pythonScript = "/PythonProgram/ShorAlgorithms/shorForFactoringProblem.py";
 
             // 创建ProcessBuilder对象，并传入Python脚本命令
             ProcessBuilder processBuilder = new ProcessBuilder("python", pythonScript);
@@ -41,12 +43,14 @@ public class attackRSAController {
             OutputStream outputStream = process.getOutputStream();
 
             // 向Python脚本发送数据
-            String inputData = "Your input data";
+            String inputData = n.toString()+'\n';
             outputStream.write(inputData.getBytes());
             outputStream.flush(); // 清空缓冲区
 
             // 获取Python脚本的输入流（用于读取脚本返回的数据）
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+
+            process.waitFor();
 
             // 读取Python脚本的返回数据
             String line;
@@ -55,15 +59,9 @@ public class attackRSAController {
                 outputData.append(line).append("\n");
             }
 
-            // 等待Python脚本执行完毕并获取其返回值
-            int exitCode = process.waitFor();
-
-            // 打印Python脚本的返回数据
-            System.out.println("Output from Python script:");
-            System.out.println(outputData.toString());
-
-            // 打印Python脚本的退出代码
-            System.out.println("Python script exit code: " + exitCode);
+            Platform.runLater(()->{
+                output.setText(outputData.toString());
+            });
 
             // 关闭流
             outputStream.close();
@@ -81,7 +79,6 @@ public class attackRSAController {
 
     @FXML
     private void doAttack(){
-        int n=0;
         try{
             n=Integer.parseInt(input.getText());
         }catch(NumberFormatException e){
@@ -96,6 +93,6 @@ public class attackRSAController {
 
         tips.setText("");
 
-        pythonProgram
+        pythonProgram.start();
     }
 }
